@@ -1,0 +1,38 @@
+package sec1;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
+
+public class ServerBack extends Thread{
+	Vector<ReceiveInfo> clientList = new Vector<ReceiveInfo>();
+	List<String> nickNameList = new ArrayList<>();
+	ServerSocket serverSocket;
+	Socket socket;
+	private ChatServerGUI serverchatGUI;
+	
+	class ReceiveInfo extends Thread{
+		private DataInputStream in;
+		private DataOutputStream out;
+		String nickname;
+		String message;
+		public ReceiveInfo(Socket socket) {
+			try {
+				out = new DataOutputStream(socket.getOutputStream());
+				in = new DataInputStream(socket.getInputStream());
+				nickname = in.readUTF();
+				nickNameList.add(nickname);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}
+	}
+}

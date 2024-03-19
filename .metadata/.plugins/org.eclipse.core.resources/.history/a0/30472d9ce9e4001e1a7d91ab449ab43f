@@ -1,0 +1,30 @@
+package sec3;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class MultiServer {
+	public static void main(String[] args) {
+		MultiServer multi = new MultiServer();
+		multi.start();
+	}
+
+	public void start() {
+		ServerSocket server = null;
+		Socket socket = null;
+
+		try {
+			server = new ServerSocket(8000);
+			while(true) {
+				 System.out.println("서버 실행 중");
+				 socket = server.accept(); //서버에 대하여 실행시
+				 System.out.println("서버 연결");
+				ReceiveThread receiveThread = new ReceiveThread(socket);
+				receiveThread.start(); //쓰레드 형식이니 이렇게 실행해야 함
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

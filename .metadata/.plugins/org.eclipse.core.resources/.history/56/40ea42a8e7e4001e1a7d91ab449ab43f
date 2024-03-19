@@ -1,0 +1,24 @@
+package sec3;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Collections;
+import java.util.List;
+
+public class ReceiveThread extends Thread{
+	static List<PrintWriter> list = Collections.synchronizedList(new ArrayList);
+	Socket socket = null;
+	BufferedReader in =null;
+	PrinterWriter out = null;
+	@Override
+	public void run() {
+		String name ="";
+		try {
+			name = in.readLine();
+			System.out.println("["+name+" 새로운 연결 생성");
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

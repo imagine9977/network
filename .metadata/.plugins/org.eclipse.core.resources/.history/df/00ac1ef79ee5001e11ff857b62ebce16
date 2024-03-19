@@ -1,0 +1,22 @@
+package sec1;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
+import java.util.ArrayList;
+
+public class ClientBack extends Thread {
+	private String nickName, IPAddress;
+	private int Port;
+	private Socket socket;
+	private String message;
+	private DataInputStream in;
+	private DataOutputStream out;
+	private ChatClientGUI chatgui;
+	ArrayList<String> NickNameList = new ArrayList<String>();
+	public void getUserInfo(String nickName, String IPAddress, int port) {
+		this.nickName = nickName;
+		this.IPAddress = IPAddress;
+		this.Port = port;
+	}
+}

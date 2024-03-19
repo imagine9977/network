@@ -1,0 +1,27 @@
+package sec3;
+
+import java.io.PrintStream;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class SendThread extends Thread{
+	Socket socket = null;
+	String name = "";
+	Scanner sc = new Scanner(System.in);
+	
+	public SendThread(Socket socket, String name) {
+		this.socket = socket;
+		this.name = name;
+	}
+	
+	@Override
+	public void run(){
+		try {
+			PrintStream out = new PrintStream(socket.getOutputStream());
+			out.println(name);
+			out.flush();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

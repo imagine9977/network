@@ -1,0 +1,86 @@
+package sec1;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Vector;
+class ChatServerGUI{};
+public class ServerBack extends Thread{
+	Vector<ReceiveInfo> clientList = new Vector<ReceiveInfo>();
+	List<String> nickNameList = new ArrayList<>();
+	ServerSocket serverSocket;
+	Socket socket;
+	private ChatServerGUI serverChatGUI;
+	
+	public void setGUI(ChatServerGUI serverChatGui) {
+		this.serverChatGUI = serverChatGui;
+	}
+	
+	public void startServer(int port) {
+		try {
+			Collections.synchronizedList(clientList);
+			serverSocket = new ServerSocket(port);
+			System.out.println("현재 IP주소: ["+InetAddress.getLocalHost()+"]");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void run() {
+		try {
+			nickNameList.add("Admin");
+			while(true) {
+				System.out.println("서버 접속 대기 중");
+				socket = serverSocket.accept();
+				System.out.println("["+socket.getInetAddress()+"]에서 접속하셨습니다.");
+				ReceiveInfo receive = new ReceiveInfo(socket);
+				clientList.add(receive);
+				receive.start();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	class ReceiveInfo extends Thread{
+		private DataInputStream in;
+		private DataOutputStream out;
+		String nickname;
+		String message;
+		
+		
+		
+		public ReceiveInfo(Socket socket) {
+			try {
+				out = new DataOutputStream(socket.getOutputStream());
+				in = new DataInputStream(socket.getInputStream());
+				nickname = in.readUTF();
+				nickNameList.add(nickname);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		}
+		@Override
+		public void run() {
+			try {
+				serverChatGui.userList.setText(null);
+				serverChatGui.appendUserList(nickNameList);
+				transmitAll(nickname+"님이 입장하셨습니다.");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
+	}
+}

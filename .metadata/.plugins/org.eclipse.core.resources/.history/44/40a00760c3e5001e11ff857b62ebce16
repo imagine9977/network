@@ -1,0 +1,16 @@
+package sec1;
+
+public class URLConnectionExam {
+	public static void main(String[] args) {
+		try {
+			URL kbs = new URL("");
+			try {
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}

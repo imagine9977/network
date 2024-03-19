@@ -1,0 +1,15 @@
+package sec3;
+
+public class MultiClient {
+	public static void main(String[] args) {
+		MultiClient client = new MultiClient();
+		client.start();
+	}
+
+	private void start() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+}

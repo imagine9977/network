@@ -1,0 +1,18 @@
+package sec1;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+public class NetworkExam2 {
+	public static void main(String[] args) throws UnknownHostException {
+		try {
+			InetAddress local = InetAddress.getLocalHost();
+			System.out.println(local.getHostAddress());
+			System.out.println(local.getHostName());
+		} catch (UnknowHostException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+package sec2;
+
+public class ThreadExam1 {
+	public static void firstThread(){
+		System.out.println("첫번째 쓰레드");
+	}
+	public static void secondaryThread() {
+		System.out.println("두번째 쓰레드");
+	}
+	public static void main(String[] args) {
+		
+	}
+}

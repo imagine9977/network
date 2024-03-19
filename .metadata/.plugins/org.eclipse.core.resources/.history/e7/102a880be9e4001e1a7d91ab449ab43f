@@ -1,0 +1,24 @@
+package sec3;
+
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class MultiServer {
+	public static void main(String[] args) {
+		MultiServer multi = new MultiServer();
+		multi.start();
+	}
+
+	public void start() {
+		ServerSocket server = null;
+		Socket socket = null;
+
+		try {
+			server = new ServerSocket(8000);
+			server.accept();
+ReceiveTHread receiveThread = new receiveThread(socket);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

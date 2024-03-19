@@ -1,0 +1,29 @@
+package sec1;
+
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+
+import javax.swing.*;
+
+class ManagerLogin extends JFrame implements ActionListener, KeyListener {
+	JPanel port_log =new JPanel();
+	JLabel port_label = new JLabel("입력을 허용할 포트번호를 입력하세요");
+	JLabel port_warn = new JLabel("(단, 포트번호는 0~65536)");
+	JTextField port_num = new JTextField(20);
+	JButton port_btn = new JButton("접속!");
+	
+	
+	public ManagerLogin() {
+		setTitle("GUI 관리자 창");
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(600,400);
+	}
+	
+}
+
+public class GUIServer {
+	public static void main(String[] args) {
+		
+	}
+}

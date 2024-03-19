@@ -1,0 +1,16 @@
+package sec1;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
+
+public class ClientBack extends Thread {
+	private String nickName, IPAddress;
+	private int Port;
+	private Socket socket;
+	private String message;
+	private DataInputStream in;
+	private DataOutputStream out;
+	private ChatClientGUI chatgui;
+	Array	
+}

@@ -1,0 +1,14 @@
+package sec1;
+
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+
+import javax.swing.*;
+
+class ManagerLogin extends JFrame implements ActionListener, KeyListener {
+	JPanel port_log =new JPanel();
+}
+
+public class GUIServer {
+
+}

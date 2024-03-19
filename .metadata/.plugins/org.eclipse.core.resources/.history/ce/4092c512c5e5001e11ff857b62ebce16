@@ -1,0 +1,18 @@
+package sec1;
+
+public class URLEncoderExam {
+	public URLEncoderExam() {
+		String sg = "1234agf";	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

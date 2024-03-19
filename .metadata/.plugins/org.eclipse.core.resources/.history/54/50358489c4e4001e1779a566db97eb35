@@ -1,0 +1,18 @@
+package sec3;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class MyServer {
+	public static void main(String[] args) {
+		BufferedReader in = null;
+		PrintWriter out = null;
+		try {
+			ServerSocket server =new ServerSocket(6000);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

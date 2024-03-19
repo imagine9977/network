@@ -1,0 +1,22 @@
+package sec3;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+
+public class MyServer {
+	public static void main(String[] args) {
+		BufferedReader in = null;
+		PrintWriter out = null;
+		ServerSocket server = null;
+		Socket socket =null;
+		Scanner sc = new Scanner(System.in);
+		try {
+			 server =new ServerSocket(6000);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
