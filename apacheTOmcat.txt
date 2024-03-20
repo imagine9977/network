@@ -1,0 +1,10 @@
+톰캣 9.6~10사이를 써야함
+
+D;.../tomcat 
+zulu 11 선택
+tomcat파일 이름을 tomcat9으로 변경
+conf 폴더의 server.xml 포트번호 8091
+
+Dynamic Webserver 3.0으로 선택해야함 
+
+web.xml 을 WEB-INF에 복사하고 또한 거기에 classes파일 생성
