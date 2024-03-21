@@ -31,6 +31,11 @@
 		<li><a href="test01.jsp"> JSP 페이지의 기본 구성 요소</a></li>
 		<li><a href="test02.jsp?name='김기태'&age=45&point=80"> Get Data 전송</a></li>
 		<li><a href="test03.jsp"> POST Data 전송</a></li>
+		<li><a href="test04.jsp"> POST Data 전송</a></li>
+		<li><a href="test05.jsp?msg='복습하세요"> POST Data 전송</a></li>
+		<li><a href="test06.jsp"> POST Data 전송</a></li>
+		<li><a href="test07.jsp">  전송</a></li>
+		<li><a href="test10.jsp"> 로그인 전송</a></li>
 	</ul>
 	
 	
